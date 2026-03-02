@@ -256,7 +256,12 @@ def get_topic_from_answer(result):
 @st.cache_resource
 def init_rag_system():
     try:
-        embeddings = OpenAIEmbeddings()
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            st.warning("⚠️ OPENAI_API_KEY no detectada. Por favor, configúrela como una variable de entorno.")
+            return None, None, [], []
+            
+        embeddings = OpenAIEmbeddings(openai_api_key=api_key)
         all_docs = []
         for f in glob.glob(f"{KNOWLEDGE_BASE}/*"):
             dtype = os.path.basename(f)
@@ -267,7 +272,7 @@ def init_rag_system():
         splitter = CharacterTextSplitter(chunk_size=500, chunk_overlap=120) 
         chunks = splitter.split_documents(all_docs)
         vstore = Chroma.from_documents(documents=chunks, embedding=embeddings, persist_directory=os.path.abspath("vector_db_brain_balance"))
-        llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0)
+        llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0, openai_api_key=api_key)
         retriever = vstore.as_retriever(search_kwargs={"k": 5})
         memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True, output_key='answer') 
         chain = ConversationalRetrievalChain.from_llm(llm=llm, retriever=retriever, memory=memory, return_source_documents=True)
