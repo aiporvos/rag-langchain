@@ -66,6 +66,7 @@ PALETTE = {
 st.markdown(f"""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
     
     /* Core Layout */
     html, body, [class*="st-"] {{ 
@@ -300,7 +301,7 @@ with tab_chat:
     with c1:
         container = st.container(height=520)
         if not st.session_state.chat_history:
-            with container.chat_message("assistant"):
+            with container.chat_message("assistant", avatar="🧠"):
                 st.markdown("### 👋 Hola, soy el Experto en Conocimiento de Brain Balance")
                 st.markdown("""
                 Utilizo tecnología **RAG (Retrieval Augmented Generation)** para responderte de forma verídica.
@@ -309,19 +310,21 @@ with tab_chat:
                 Esto evita que la IA alucine o invente datos, garantizando que cada respuesta esté anclada en la realidad de la empresa.
                 """)
         for m in st.session_state.chat_history:
-            with container.chat_message(m["role"]): st.markdown(m["content"])
+            av = "🧠" if m["role"] == "assistant" else "👤"
+            with container.chat_message(m["role"], avatar=av): st.markdown(m["content"])
         
         if q := st.chat_input("Consulta a la base de conocimiento..."):
             st.session_state.chat_history.append({"role": "user", "content": q})
-            with container.chat_message("user"): st.markdown(q)
-            with container.chat_message("assistant"):
+            with container.chat_message("user", avatar="👤"): st.markdown(q)
+            with container.chat_message("assistant", avatar="🧠"):
                 if st.session_state.chain:
                     res = st.session_state.chain.invoke({"question": q})
                     ans = res["answer"]; st.markdown(ans)
                     st.session_state.chat_history.append({"role": "assistant", "content": ans})
                     topic, success = get_topic_from_answer(res)
                     try:
-                        q_emb = OpenAIEmbeddings().embed_query(q)
+                        api_key = os.getenv("OPENAI_API_KEY")
+                        q_emb = OpenAIEmbeddings(openai_api_key=api_key).embed_query(q)
                         st.session_state.query_trace_data.append({"text": q, "embedding": q_emb, "topic": topic if success else "miss", "success": success})
                     except: pass
                     if success: st.session_state.topic_counts[topic] += 1
@@ -346,7 +349,8 @@ with tab_chat:
                         st.session_state.chat_history.append({"role": "assistant", "content": ans})
                         topic, success = get_topic_from_answer(res)
                         try:
-                            q_emb = OpenAIEmbeddings().embed_query(s)
+                            api_key = os.getenv("OPENAI_API_KEY")
+                            q_emb = OpenAIEmbeddings(openai_api_key=api_key).embed_query(s)
                             st.session_state.query_trace_data.append({"text": s, "embedding": q_emb, "topic": topic if success else "miss", "success": success})
                         except: pass
                         if success: st.session_state.topic_counts[topic] += 1
