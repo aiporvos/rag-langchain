@@ -199,6 +199,33 @@ st.markdown(f"""
         border: 1px solid rgba(255,255,255,0.05);
         box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }}
+
+    /* RESPONSIVENESS */
+    @media (max-width: 1024px) {{
+        .dashboard-header {{ padding: 2rem; gap: 1.5rem; }}
+        .dashboard-title {{ font-size: 2rem; }}
+        .info-card {{ padding: 1.5rem; }}
+    }}
+
+    @media (max-width: 768px) {{
+        .dashboard-header {{ 
+            padding: 1.5rem; 
+            flex-direction: column; 
+            text-align: center; 
+            border-radius: 0 0 24px 24px; 
+            gap: 1rem;
+        }}
+        .dashboard-title {{ font-size: 1.6rem; letter-spacing: -1px; }}
+        .stTabs [data-baseweb="tab"] {{ padding: 10px 15px; font-size: 0.8rem; }}
+        .explanation-box {{ padding: 1.5rem; border-radius: 24px; }}
+        .info-card {{ border-radius: 24px; }}
+    }}
+
+    @media (max-width: 480px) {{
+        .dashboard-title {{ font-size: 1.4rem; }}
+        .icon-container-main {{ padding: 0.8rem; }}
+        .stTabs [data-baseweb="tab-list"] {{ flex-wrap: wrap; justify-content: center; }}
+    }}
 </style>
 """, unsafe_allow_html=True)
 
