@@ -2,9 +2,13 @@ FROM python:3.11
 
 WORKDIR /app
 
-# The full python image already has git, build-essential, etc.
-# We only need to install the python requirements.
+# Install build dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
 
+# Install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
@@ -12,10 +16,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Create directory for ChromaDB persistence
-RUN mkdir -p vector_db_brain_balance
+RUN mkdir -p chroma_db
 
-EXPOSE 8501
+EXPOSE 7860
 
-HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health || exit 1
-
-ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+# Entrypoint for Gradio app
+ENTRYPOINT ["python", "app.py"]
