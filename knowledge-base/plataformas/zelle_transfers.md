@@ -1,0 +1,1 @@
+# Transferencias Zelle para Usuarios Internacionales\n\n## Uso de Zelle\nSoportamos depósitos vía Zelle de cuentas corporativas verificadas. El monto mínimo es de 100 USD.\n\n## Verificación de Terceros\nNo aceptamos transferencias de Zelle de cuentas que no pertenezcan al titular de la cuenta en Brain Balance.

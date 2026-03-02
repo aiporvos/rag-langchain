@@ -1,0 +1,1 @@
+# Mercado Pago y Clearing Argentino\n\n## Disponibilidad Inmediata\nDepósitos vía CVU/CBU de Mercado Pago se acreditan al instante las 24 horas.\n\n## Límites de la AFIP\nRecordamos a los usuarios argentinos que las operaciones superiores a los montos estipulados por el ente regulador pueden requerir factura de origen.

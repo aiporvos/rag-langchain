@@ -1,0 +1,1 @@
+# Responsabilidad Social y Educación Financiera\n\n## Academia Balance\nOfrecemos cursos gratuitos sobre seguridad en la red y fundamentos de blockchain para todos nuestros usuarios activos.\n\n## Donaciones en Crypto\nFacilitamos un portal de donaciones directas a ONGs verificadas sin cobrar comisiones de intermediación.

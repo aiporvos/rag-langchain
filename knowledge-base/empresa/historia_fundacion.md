@@ -1,0 +1,1 @@
+# Historia y Fundación de Brain Balance\n\n## Origen\nFundada en 2021 por expertos en ciberseguridad y mercados financieros, buscando resolver la fricción del intercambio de activos en Latinoamérica.\n\n## Filosofía Cypherpunk\nCreemos en la privacidad financiera y el acceso libre al valor digital.

@@ -1,0 +1,1 @@
+# Integración con Redes Blockchain\n\n## Soporte Multired\nOperamos en Mainnet, BSC, TRON, Polygon y Solana.\n\n## Stablecoins Soportadas\nUSDT, USDC, DAI y el nuevo token algorítmico BB-USD propio de la plataforma.

@@ -1,0 +1,1 @@
+# Soporte para Billeteras Virtuales E-Wallets\n\n## PayPal y Disputas\nExplicamos el proceso de retención de 21 días que aplica PayPal a cuentas nuevas y cómo Brain Balance ayuda a liberar esos fondos mediante comprobantes de entrega digital.\n\n## Skrill y Neteller\nTransferencias instantáneas mediante nuestra cuenta de Merchant Verificada.

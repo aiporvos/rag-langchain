@@ -1,0 +1,1 @@
+# Cumplimiento Normativo Internacional\n\n## KYC (Conoce a tu Cliente)\nCumplimos con las normativas GAFI/FATF. Solicitamos prueba de origen de fondos para transacciones acumuladas superiores a 10,000 USD mensuales.\n\n## Monitoreo de Transacciones\nUtilizamos IA para detectar patrones de "structuring" o "smurfing" que intenten evadir reportes obligatorios.

@@ -1,0 +1,1 @@
+# Autenticación Biométrica y Seguridad Móvil\n\n## FaceID y Huella Digital\nNuestra App móvil integra biometría nativa para autorizar retiros. Esto reemplaza el código SMS tradicional por un método mucho más seguro.\n\n## Encriptación de Punta a Punta\nToda la comunicación entre la App y nuestros servidores está cifrada mediante TLS 1.3 y AES-256.

@@ -1,0 +1,1 @@
+# Cultura y Misión de Brain Balance\n\nEn Brain Balance, nuestra misión es democratizar el acceso a la liquidez global mediante tecnología RAG. Somos un equipo distribuido en 12 países, operando 24/7 para garantizar que cada intercambio sea seguro y eficiente.

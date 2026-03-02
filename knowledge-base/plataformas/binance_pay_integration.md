@@ -1,0 +1,1 @@
+# Integración con Binance Pay\n\n## Pagos Directos\nBrain Balance permite cargar saldo directamente desde Binance Pay sin pagar comisiones de red adicionales.\n\n## Proceso de Escrow\nLas transacciones mediante Binance Pay incluyen un sistema de escrow automático para proteger tanto al comprador como al vendedor.

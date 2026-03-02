@@ -1,0 +1,1 @@
+# Tarifas y Estructura de Costos\n\n## Comisiones por Plataforma\n- PayPal: 4.5% + 0.30 USD\n- Payoneer: 2% fijo\n- Skrill: 3.9% + tarifa de red\n- Criptomonedas: 0.5% (Tarifa de Brain Balance) + Gas Fee de la red.\n\n## Programa de Fidelidad\nLos usuarios Platinum disfrutan de un 0.25% de tarifa plana en todas sus operaciones manuales.

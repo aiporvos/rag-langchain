@@ -1,0 +1,1 @@
+# Soporte y Atención al Cliente\n\nEl equipo de soporte de Brain Balance atiende vía Chat en Vivo y correo electrónico. El tiempo medio de respuesta es de 8 minutos para cuentas VIP y 25 minutos para cuentas estándar.
