@@ -1,121 +1,110 @@
-# 🤖 AI Document Chatbot - RAG Engine
+# 🤖 AI Document Chatbot - Motor RAG
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
 [![LangChain](https://img.shields.io/badge/LangChain-Latest-orange.svg)](https://langchain.com/)
 [![Gradio](https://img.shields.io/badge/Gradio-UI-green.svg)](https://gradio.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-An advanced **Retrieval-Augmented Generation (RAG)** system built with LangChain, OpenAI, and ChromaDB. This application allows you to upload multiple PDF documents, process them into a vector database, and interact with them through a modern web interface.
+Un sistema avanzado de **Generación Aumentada por Recuperación (RAG)** construido con LangChain, OpenAI y ChromaDB. Esta aplicación te permite subir múltiples documentos PDF, procesarlos en una base de datos vectorial e interactuar con ellos a través de una interfaz web moderna.
 
 ---
 
-## ✨ Key Features
+## ✨ Características Principales
 
-- 📄 **Multi-PDF Support** - Upload and process multiple documents simultaneously.
-- ✂️ **Smart Chunking** - Intelligent text splitting (1000 characters with 200 overlap) for better context retention.
-- 🔍 **Vector Search** - Semantic search powered by **OpenAI Embeddings** and **ChromaDB**.
-- 💬 **Contextual Chat** - Conversational AI using **GPT-4o-mini** with full chat history memory.
-- 📊 **Embedding Visualization** - Interactive 2D t-SNE projection of your document chunks using **Plotly**.
-- 📚 **Source Tracking** - Every answer includes references to the specific documents used.
-- 🎨 **Modern UI** - Sleek, responsive interface built with **Gradio**.
+- 📄 **Soporte Multi-PDF** - Sube y procesa varios documentos simultáneamente.
+- ✂️ **Chunking Inteligente** - División de texto optimizada (1000 caracteres con 200 de solapamiento) para una mejor retención del contexto.
+- 🔍 **Búsqueda Semántica** - Búsqueda vectorial impulsada por **OpenAI Embeddings** y **ChromaDB**.
+- 💬 **Chat Contextual** - IA conversacional usando **GPT-4o-mini** con memoria completa del historial de chat.
+- 📊 **Visualización de Embeddings** - Proyección interactiva 2D t-SNE de los fragmentos de tus documentos usando **Plotly**.
+- 📚 **Rastreo de Fuentes** - Cada respuesta incluye referencias a los documentos específicos utilizados.
+- 🎨 **Interfaz Moderna** - Interfaz elegante y responsiva construida con **Gradio**.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Stack Tecnológico
 
 - **Framework**: [LangChain](https://github.com/hwchase17/langchain)
 - **LLM**: OpenAI `gpt-4o-mini`
-- **Vector Database**: [ChromaDB](https://www.trychroma.com/)
+- **Base de Datos Vectorial**: [ChromaDB](https://www.trychroma.com/)
 - **Embeddings**: OpenAI Embeddings
-- **Interface**: [Gradio](https://gradio.app/)
-- **Visualizations**: [Plotly](https://plotly.com/) & [Scikit-learn](https://scikit-learn.org/)
+- **Interfaz**: [Gradio](https://gradio.app/)
+- **Visualizaciones**: [Plotly](https://plotly.com/) & [Scikit-learn](https://scikit-learn.org/)
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Comenzando
 
-### Prerequisites
+### Requisitos Previos
 
 - Python 3.9+
-- OpenAI API Key
+- Clave de API de OpenAI (OpenAI API Key)
 
-### Installation
+### Instalación
 
-1. **Clone the repository**
+1. **Clonar el repositorio**
    ```bash
    git clone https://github.com/aiporvos/rag-langchain.git
    cd rag-langchain
    ```
 
-2. **Set up a virtual environment**
+2. **Configurar un entorno virtual**
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate  # En Windows: venv\Scripts\activate
    ```
 
-3. **Install dependencies**
+3. **Instalar dependencias**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Environment Configuration**
-   Create a `.env` file in the root directory:
+4. **Configuración del Entorno**
+   Crea un archivo `.env` en el directorio raíz:
    ```env
-   OPENAI_API_KEY=your_api_key_here
+   OPENAI_API_KEY=tu_clave_de_api_aqui
    ```
 
-### Running Locally
+### Ejecución Local
 
 ```bash
 python app.py
 ```
-The application will be available at `http://localhost:7860`.
+La aplicación estará disponible en `http://localhost:7860`.
 
 ---
 
-## 🏗️ System Architecture
+## 🏗️ Arquitectura del Sistema
 
-The system follows a classic RAG pipeline:
+El sistema sigue un pipeline clásico de RAG:
 
-```mermaid
-graph TD
-    A[PDF Documents] --> B[Text Splitting]
-    B --> C[OpenAI Embeddings]
-    C --> D[ChromaDB Vector Store]
-    E[User Query] --> F[Retriever]
-    D --> F
-    F --> G[GPT-4o mini]
-    G --> H[Response with Sources]
-```
-
-1. **Ingestion**: Documents are loaded, split into chunks, and vectorized.
-2. **Storage**: Vectors are stored in a local ChromaDB instance.
-3. **Retrieval**: When a user asks a question, the system finds the most relevant chunks.
-4. **Generation**: The LLM synthesizes an answer using the retrieved context and conversation history.
+1. **Ingestión**: Los documentos se cargan, se dividen en fragmentos (chunks) y se vectorizan.
+2. **Almacenamiento**: Los vectores se almacenan en una instancia local de ChromaDB.
+3. **Recuperación**: Cuando un usuario hace una pregunta, el sistema encuentra los fragmentos más relevantes.
+4. **Generación**: El LLM sintetiza una respuesta utilizando el contexto recuperado y el historial de la conversación.
 
 ---
 
-## 📊 Embedding Insights
+## 📊 Visualización de Datos
 
-One unique feature of this project is the **Embedding Visualization**. It uses **t-SNE** (t-Distributed Stochastic Neighbor Embedding) to project the high-dimensional vector space into 2D, allowing you to see how your document chunks are distributed and clustered.
-
----
-
-## 📤 Deployment
-
-This project is optimized for **HuggingFace Spaces**. To deploy:
-
-1. Create a new Space on HuggingFace.
-2. Select **Gradio** as the SDK.
-3. Upload `app.py`, `requirements.txt`, and `.gitignore`.
-4. Add your `OPENAI_API_KEY` to the Space's **Secrets**.
+Una característica única de este proyecto es la **Visualización de Embeddings**. Utiliza **t-SNE** (t-Distributed Stochastic Neighbor Embedding) para proyectar el espacio vectorial de alta dimensión en 2D, permitiéndote ver cómo se distribuyen y agrupan los fragmentos de tus documentos.
 
 ---
 
-## 📄 License
+## 📤 Despliegue
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Este proyecto está optimizado para **HuggingFace Spaces**. Para desplegar:
+
+1. Crea un nuevo "Space" en HuggingFace.
+2. Selecciona **Gradio** como el SDK.
+3. Sube `app.py`, `requirements.txt` y `.gitignore`.
+4. Agrega tu `OPENAI_API_KEY` en los **Secrets** del Space.
 
 ---
 
-Created with ❤️ as part of the **LLM Engineering** course.
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT; consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+---
+
+Creado con ❤️ como parte del curso de **LLM Engineering**.
