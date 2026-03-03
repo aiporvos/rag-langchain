@@ -31,6 +31,18 @@ Un sistema avanzado de **Generación Aumentada por Recuperación (RAG)** constru
 - **Visualizaciones**: [Plotly](https://plotly.com/) & [Scikit-learn](https://scikit-learn.org/)
 
 ---
+<img width="1835" height="816" alt="image" src="https://github.com/user-attachments/assets/34e742bb-8647-495f-a969-1d49aa72e887" />
+
+<img width="1833" height="845" alt="image" src="https://github.com/user-attachments/assets/8591de80-efad-4f54-b31c-88d296988b00" />
+
+<img width="1831" height="903" alt="image" src="https://github.com/user-attachments/assets/feb40d72-8297-4422-89d4-2cc7418d404c" />
+
+
+
+
+
+
+---
 
 ## 🚀 Comenzando
 
